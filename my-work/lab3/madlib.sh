@@ -6,7 +6,7 @@ echo "Let's build a mad-lib!"
 read -p "1. Give me an adjective (descriptive): " ADJ1
 read -p "2. Name a type of food: " NOUN1
 read -p "3. Give me a verb (future tense) : " VERB1
-read -p "4. Give an adjective (emotion): " ADJ2
+read -p "4. Give me an adjective (emotion): " ADJ2
 read -p "5. Give me a verb (action): " VERB2
 read -p "6. Give me a verb (reaction): " VERB3
 read -p "7. Name a living thing: " NOUN2
