@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 
 import os
+import json
+import requests
 
-Fav_Movie = input("What is your favorite movie? ")
-Sign = input("What is your astrology sign? ")
-Eye_color = input("What is your eye color? ")
+GHUSER = os.getenv('GITHUB_USER')
+print(GHUSER)
 
-os.environ["Fav_Movie"] = Fav_Movie
-os.environ["Sign"] = Sign
-os.environ["Eye_color"] = Eye_color
+url = 'https://api.github.com/users/{0}/events'.format(GHUSER)
+print(url)
 
-print(os.getenv("Fav_Movie"))
-print(os.getenv("Sign"))
-print(os.getenv("Eye_color"))
+r = json.loads(requests.get(url).text)
+
+for x in r[:5]:
+  event = x['type'] + ' :: ' + x['repo']['name']
+  print(event)
+
