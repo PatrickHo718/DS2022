@@ -1,0 +1,11 @@
+#!/bin/bash
+
+curl https://miro.medium.com/v2/resize:fit:1400/1*CIjxfX_1Xk_ts763BA39MQ.jpeg > albatross.jpeg
+
+aws s3 cp albatross.jpeg s3://ds2022-bqu3tr/
+
+aws s3 presign --expires-in 604800 s3://ds2022-bqu3tr/albatross.jpeg
+
+
+
+
