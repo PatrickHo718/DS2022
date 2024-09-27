@@ -6,6 +6,7 @@ aws s3 cp albatross.jpeg s3://ds2022-bqu3tr/
 
 aws s3 presign --expires-in 604800 s3://ds2022-bqu3tr/albatross.jpeg
 
+url = 'https://ds2022-bqu3tr.s3.us-east-1.amazonaws.com/albatross.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAWFIPTE7FR62UOQKE%2F20240927%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240927T184400Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=393a2d73e683062b0a05b500facc6fa2136f2b2db720f055d5790149c0128e34'
 
 
 

@@ -1,0 +1,33 @@
+#!/bin/python3
+
+import boto3
+import urllib.request
+
+url = 'https://media.tenor.com/BP70qe8X0J8AAAAM/crycat-crying-cat.gif'
+local_file = 'sadok.gif'
+
+urllib.request.urlretrieve(url, local_file)
+
+s3 = boto3.client('s3', region_name='us-east-1')
+
+bucket = 'ds2022-bqu3tr'
+
+with open(local_file, 'rb') as file_data:
+    resp = s3.put_object(
+        ACL = 'public-read',
+        Body = file_data,
+        Bucket = bucket,
+        Key = local_file
+    )
+
+expires_in = 604800
+
+response = s3.generate_presigned_url(
+    'get_object',
+    Params={'Bucket': bucket, 'Key': local_file},
+    ExpiresIn=expires_in
+    )
+
+print(response)
+
+final_url = 'https://ds2022-bqu3tr.s3.amazonaws.com/sadok.gif?AWSAccessKeyId=AKIAWFIPTE7FR62UOQKE&Signature=ODMQctaCv%2FWMbAgaGD3kDERoUrs%3D&Expires=1728071264'
