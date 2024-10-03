@@ -30,4 +30,4 @@ response = s3.generate_presigned_url(
 
 print(response)
 
-final_url = 'https://ds2022-bqu3tr.s3.amazonaws.com/sadok.gif?AWSAccessKeyId=AKIAWFIPTE7FR62UOQKE&Signature=ODMQctaCv%2FWMbAgaGD3kDERoUrs%3D&Expires=1728071264'
+final_url = 'https://ds2022-bqu3tr.s3.amazonaws.com/sadok.gif?AWSAccessKeyId=AKIAWFIPTE7FR62UOQKE&Signature=AK2UZYHlkMIEhU9QCFLm%2BF0jF6Y%3D&Expires=1728569715'
