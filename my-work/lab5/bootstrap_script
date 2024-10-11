@@ -5,4 +5,4 @@
 
 /usr/bin/apt install -y nginx
 /usr/bin/apt install -y apache2
-/usr/bin/apt install -y redis-server
+/usr/bin/apt install -y git
